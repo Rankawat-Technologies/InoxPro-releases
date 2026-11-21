@@ -7,14 +7,23 @@ Your data stays on your computer, in an encrypted database.
 
 Get the latest installer from the [**Releases**](../../releases/latest) page:
 
-- **Mac** (Apple Silicon, M1 or newer): `Inox Pro_<version>_aarch64.dmg`
-- **Windows**: `Inox Pro_<version>_x64-setup.exe`
+- **Mac** (Apple Silicon, M1 or newer): `Inox.Pro_<version>_aarch64.dmg`
+- **Windows**: `Inox.Pro_<version>_x64-setup.exe`
+
+(Ignore the "Source code" links on the release page; they contain only this README.)
 
 ## Install
 
 **Mac**
 1. Open the `.dmg` and drag **Inox Pro** into **Applications**.
-2. The first time, right-click the app and choose **Open**, then **Open** again. macOS shows this warning because the app is not yet signed with an Apple certificate.
+2. Open the app. macOS says "Apple could not verify Inox Pro is free of malware". Click **Done** (not "Move to Bin"). This happens because the app is not yet signed with an Apple certificate.
+3. Open **System Settings → Privacy & Security**, scroll to the **Security** section, and click **Open Anyway** next to the message about "Inox Pro". Enter your Mac password or use Touch ID, then click **Open Anyway** again.
+4. This is needed only the first time. If the button is gone, try opening the app once more and it comes back.
+
+If macOS says the app is "damaged", run this once in Terminal and open it again:
+```
+xattr -cr "/Applications/Inox Pro.app"
+```
 
 **Windows**
 1. Run the `.exe`. It installs for your user account only, so no administrator password is needed.
